@@ -1,0 +1,5 @@
+# Default values for goldilocks-app.
+
+goldilocks:
+  image:
+    repository: quay.io/giantswarm/goldilocks
