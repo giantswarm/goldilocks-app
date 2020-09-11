@@ -1,10 +1,10 @@
-[![CircleCI](https://circleci.com/gh/giantswarm/{APP-NAME}-app.svg?style=shield)](https://circleci.com/gh/giantswarm/{APP-NAME}-app)
+[![CircleCI](https://circleci.com/gh/giantswarm/goldilocks-app.svg?style=shield)](https://circleci.com/gh/giantswarm/goldilocks-app)
 
-# {APP-NAME}-app chart
+# goldilocks-app chart
 
-Giant Swarm offers a {APP-NAME} Managed App which can be installed in tenant clusters.
-Here we define the {APP-NAME} chart with its templates and default configuration.
+Giant Swarm offers a Goldilocks Managed App which can be installed in tenant clusters.
+Here we define the Golidlocks chart with its templates and default configuration.
 
 ## Credit
 
-* {APP HELM REPOSITORY}
+* https://github.com/FairwindsOps/charts/tree/master/stable/goldilocks
