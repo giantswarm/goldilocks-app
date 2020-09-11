@@ -7,4 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Initial chart wrapping upstream Goldilocks chart v2.3.5 using Goldilocks v2.2.0.
+
 [Unreleased]: https://github.com/giantswarm/goldilocks-app/tree/master
