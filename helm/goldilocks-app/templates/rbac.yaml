@@ -3,7 +3,11 @@ kind: ClusterRole
 metadata:
   name: {{ include "goldilocks.fullname" . }}-controller-psp
   labels:
-    {{- include "chart-operator.labels" . | nindent 4 }}
+    app.kubernetes.io/name: {{ include "goldilocks.name" . }}
+    helm.sh/chart: {{ include "goldilocks.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/component: controller
 rules:
   - apiGroups:
       - policy
@@ -19,7 +23,11 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: {{ include "goldilocks.fullname" . }}-controller-psp
   labels:
-    {{- include "chart-operator.labels" . | nindent 4 }}
+    app.kubernetes.io/name: {{ include "goldilocks.name" . }}
+    helm.sh/chart: {{ include "goldilocks.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/component: controller
 subjects:
   - kind: ServiceAccount
     name: {{ include "goldilocks.fullname" . }}-controller
