@@ -1,0 +1,30 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "goldilocks.fullname" . }}-controller-psp
+  labels:
+    {{- include "chart-operator.labels" . | nindent 4 }}
+rules:
+  - apiGroups:
+      - policy
+    resources:
+      - podsecuritypolicies
+    resourceNames:
+      - {{ include "goldilocks.fullname" . }}-controller
+    verbs:
+      - use
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ include "goldilocks.fullname" . }}-controller-psp
+  labels:
+    {{- include "chart-operator.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "goldilocks.fullname" . }}-controller
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "goldilocks.fullname" . }}-controller-psp
+  apiGroup: rbac.authorization.k8s.io
