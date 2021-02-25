@@ -1,5 +1,0 @@
-dependencies:
-
-  - name: goldilocks
-    version: "2.3.5" # when upgrading make sure to update Chart.yaml too
-    repository: https://charts.fairwinds.com/stable
