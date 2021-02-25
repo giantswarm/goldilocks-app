@@ -5,9 +5,15 @@ vpa:
   # vpa.enabled -- If true, the vpa will be installed as a sub-chart
   enabled: false
 
+metrics-server:
+  # metrics-server.enabled -- If true, the metrics-server will be installed as a sub-chart
+  enabled: false
+  apiService:
+    create: true
+
 image:
   # image.repository -- Repository for the goldilocks image
-  repository: quay.io/giantswarm/goldilocks
+  repository: quay.io/fairwinds/goldilocks
   # image.tag -- The goldilocks image tag to use
   tag: v3.1.4
   # image.pullPolicy -- imagePullPolicy - Highly recommended to leave this as `Always`
