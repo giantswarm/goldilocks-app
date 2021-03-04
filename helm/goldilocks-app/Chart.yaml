@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 appVersion: v3.1.4
 dependencies:
 - condition: vpa.enabled
