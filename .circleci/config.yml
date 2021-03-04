@@ -6,7 +6,7 @@ workflows:
   build:
     jobs:
       - architect/push-to-app-catalog:
-          name: "package and push goldilocks-app chart"
+          name: "package and push goldilocks-app chart to giantswarm-playground-catalog"
           app_catalog: "giantswarm-playground-catalog"
           app_catalog_test: "giantswarm-playground-test-catalog"
           context: architect
@@ -18,7 +18,7 @@ workflows:
 
       - architect/push-to-app-catalog:
           context: "architect"
-          name: "package and push goldilocks-app chart"
+          name: "package and push goldilocks-app chart to control-plane-catalog"
           app_catalog: "control-plane-catalog"
           app_catalog_test: "control-plane-test-catalog"
           chart: "goldilocks-app"
