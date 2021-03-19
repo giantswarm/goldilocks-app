@@ -6,9 +6,9 @@ workflows:
   build:
     jobs:
       - architect/push-to-app-catalog:
-          name: "package and push goldilocks-app chart to giantswarm-playground-catalog"
-          app_catalog: "giantswarm-playground-catalog"
-          app_catalog_test: "giantswarm-playground-test-catalog"
+          name: "package and push goldilocks-app chart to giantswarm-catalog"
+          app_catalog: "giantswarm-catalog"
+          app_catalog_test: "giantswarm-test-catalog"
           context: architect
           chart: "goldilocks-app"
           # Trigger job on git tag.
