@@ -1,9 +1,10 @@
 apiVersion: v2
 appVersion: "v4.4.0"
-version: 6.2.0
+version: "[[ .Version ]]"
 description: |
   A Helm chart for running Fairwinds Goldilocks. See https://github.com/FairwindsOps/goldilocks
-name: goldilocks
+name: goldilocks-app
+home: https://github.com/giantswarm/goldilocks-app
 icon: https://raw.githubusercontent.com/FairwindsOps/charts/master/stable/goldilocks/icon.png
 maintainers:
   - name: sudermanjr
@@ -14,11 +15,11 @@ keywords:
   - resources
   - kubernetes
 dependencies:
-- name: vpa
-  version: 1.3.0
-  repository: https://charts.fairwinds.com/stable
+- name: vertical-pod-autoscaler-app
+  version: 2.5.0
+  repository: https://giantswarm.github.io/default-catalog
   condition: vpa.enabled
-- name: metrics-server
-  version: 5.11.4
-  repository: https://charts.bitnami.com/bitnami
+- name: metrics-server-app
+  version: 1.8.0
+  repository: https://giantswarm.github.io/default-catalog
   condition: metrics-server.enabled
