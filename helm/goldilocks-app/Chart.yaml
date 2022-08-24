@@ -1,14 +1,25 @@
 apiVersion: v2
-appVersion: v3.1.4
-dependencies:
-- condition: vpa.enabled
-  name: vertical-pod-autoscaler-app
-  repository: https://giantswarm.github.io/giantswarm-playground-catalog
-  version: 1.0.3
-description: A Helm chart for the goldilocks-app
-home: https://github.com/giantswarm/goldilocks-app
-icon: https://raw.githubusercontent.com/FairwindsOps/goldilocks/master/pkg/dashboard/assets/images/goldilocks.svg
+appVersion: "v4.4.0"
+version: "[[ .Version ]]"
+description: |
+  A Helm chart for running Fairwinds Goldilocks. See https://github.com/FairwindsOps/goldilocks
 name: goldilocks-app
-version: [[ .Version ]]
+home: https://github.com/giantswarm/goldilocks-app
+icon: https://raw.githubusercontent.com/FairwindsOps/charts/master/stable/goldilocks/icon.png
+maintainers:
+  - name: sudermanjr
 sources:
-  - https://raw.githubusercontent.com/giantswarm/goldilocks-app/v[[ .Version ]]/README.md
+  - https://github.com/FairwindsOps/goldilocks
+keywords:
+  - goldilocks
+  - resources
+  - kubernetes
+dependencies:
+- name: vertical-pod-autoscaler-app
+  version: 2.5.0
+  repository: https://giantswarm.github.io/default-catalog
+  condition: vpa.enabled
+- name: metrics-server-app
+  version: 1.8.0
+  repository: https://giantswarm.github.io/default-catalog
+  condition: metrics-server.enabled

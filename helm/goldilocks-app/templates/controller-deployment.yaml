@@ -9,6 +9,13 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/component: controller
+    {{- if .Values.controller.deployment.additionalLabels }}
+    {{ toYaml .Values.controller.deployment.additionalLabels | nindent 4 }}
+    {{- end }}
+  {{- with .Values.controller.deployment.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   replicas: 1
   selector:
@@ -22,7 +29,18 @@ spec:
         app.kubernetes.io/name: {{ include "goldilocks.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
         app.kubernetes.io/component: controller
+        {{- if .Values.controller.deployment.additionalLabels }}
+        {{ toYaml .Values.controller.deployment.additionalLabels | nindent 8 }}
+        {{- end }}
+      {{- with .Values.controller.deployment.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
     spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- if .Values.controller.serviceAccount.create }}
       serviceAccountName: {{ include "goldilocks.fullname" . }}-controller
       {{- else }}
@@ -41,10 +59,20 @@ spec:
             {{- range $name, $value := .Values.controller.flags }}
             - --{{ $name }}={{ $value }}
             {{- end }}
+        {{- if .Values.controller.securityContext }}
           securityContext:
             {{- toYaml .Values.controller.securityContext | nindent 12 }}
+        {{- end }}
           resources:
             {{- toYaml .Values.controller.resources | nindent 12 }}
+          {{- if .Values.controller.deployment.extraVolumeMounts }}
+          volumeMounts:
+          {{ toYaml .Values.controller.deployment.extraVolumeMounts | nindent 12 }}
+          {{- end }}
+{{- if .Values.controller.deployment.extraVolumes }}
+      volumes:
+{{ toYaml .Values.controller.deployment.extraVolumes | indent 8}}
+{{- end }}
       {{- with .Values.controller.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -55,6 +83,10 @@ spec:
     {{- end }}
     {{- with .Values.controller.tolerations }}
       tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.controller.topologySpreadConstraints }}
+      topologySpreadConstraints:
         {{- toYaml . | nindent 8 }}
     {{- end }}
 {{- end }}
