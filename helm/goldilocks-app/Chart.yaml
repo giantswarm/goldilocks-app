@@ -2,10 +2,10 @@ apiVersion: v2
 appVersion: "v4.4.0"
 version: "[[ .Version ]]"
 description: |
-  A Helm chart for running Fairwinds Goldilocks. See https://github.com/FairwindsOps/goldilocks
+  Fairwinds Goldilocks is a tool to automatically adjust resource requests and limits.
 name: goldilocks-app
 home: https://github.com/giantswarm/goldilocks-app
-icon: https://raw.githubusercontent.com/FairwindsOps/charts/master/stable/goldilocks/icon.png
+icon: https://s.giantswarm.io/app-icons/goldilocks/1/icon_light.svg
 maintainers:
   - name: sudermanjr
 sources:
