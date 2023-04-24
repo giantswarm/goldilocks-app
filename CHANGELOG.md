@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [6.2.1] - 2023-04-20
 
+- Metadata: Use propert SVG icon, update description.
+
 ## [6.2.0] - 2022-08-24
 
 - Align chart to upstream.
