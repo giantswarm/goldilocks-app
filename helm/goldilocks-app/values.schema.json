@@ -122,7 +122,7 @@
                             "type": "boolean"
                         },
                         "name": {
-                            "type": "null"
+                            "type": "string"
                         }
                     }
                 },
@@ -313,7 +313,7 @@
                             "type": "boolean"
                         },
                         "name": {
-                            "type": "null"
+                            "type": "string"
                         }
                     }
                 },
