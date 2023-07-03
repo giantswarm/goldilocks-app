@@ -141,7 +141,7 @@
                     "type": "object"
                 },
                 "basePath": {
-                    "type": "null"
+                    "type": "string"
                 },
                 "deployment": {
                     "type": "object",
@@ -207,7 +207,7 @@
                             }
                         },
                         "ingressClassName": {
-                            "type": "null"
+                            "type": "string"
                         },
                         "tls": {
                             "type": "array"
