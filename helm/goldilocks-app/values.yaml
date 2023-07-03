@@ -43,7 +43,7 @@ controller:
     # controller.serviceAccount.create -- If true, a service account will be created for the controller. If set to false, you must set `controller.serviceAccount.name`
     create: true
     # controller.serviceAccount.name -- The name of an existing service account to use for the controller. Combined with `controller.serviceAccount.create`
-    name:
+    name: ""
 
   # controller.flags -- A map of additional flags to pass to the controller
   flags: {}
@@ -119,7 +119,7 @@ dashboard:
     # dashboard.serviceAccount.create -- If true, a service account will be created for the dashboard. If set to false, you must set `dashboard.serviceAccount.name`
     create: true
     # dashboard.serviceAccount.name -- The name of an existing service account to use for the controller. Combined with `dashboard.serviceAccount.create`
-    name:
+    name: ""
 
   deployment:
     # dashboard.deployment.annotations -- Extra annotations for the dashboard deployment
