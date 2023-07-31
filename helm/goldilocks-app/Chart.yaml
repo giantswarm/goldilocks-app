@@ -1,7 +1,7 @@
 apiVersion: v2
 appVersion: "v4.8.3"
 annotations:
-  application.giantswarm.io/team: atlas
+  application.giantswarm.io/team: turtles
   ui.giantswarm.io/logo: https://raw.githubusercontent.com/FairwindsOps/charts/master/stable/goldilocks/icon.png
 version: "6.2.2"
 description: |
@@ -9,8 +9,8 @@ description: |
 name: goldilocks
 icon: https://raw.githubusercontent.com/FairwindsOps/charts/master/stable/goldilocks/icon.png
 maintainers:
-  - name: giantswarm/team-atlas
-    email: team-atlas@giantswarm.io
+  - name: giantswarm/team-turtles
+    email: team-turtles@giantswarm.io
 sources:
   - https://github.com/FairwindsOps/goldilocks
 keywords:
