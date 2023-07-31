@@ -7,10 +7,12 @@ workflows:
     jobs:
       - architect/push-to-app-catalog:
           context: "architect"
+          executor: "app-build-suite"
           name: "package and push goldilocks-app chart to giantswarm-catalog"
           app_catalog: "giantswarm-catalog"
           app_catalog_test: "giantswarm-test-catalog"
           chart: "goldilocks-app"
+          ct_config: ".circleci/ct-config.yml"
           # Trigger job on git tag.
           filters:
             tags:
@@ -18,10 +20,12 @@ workflows:
 
       - architect/push-to-app-catalog:
           context: "architect"
+          executor: "app-build-suite"
           name: "package and push goldilocks-app chart to control-plane-catalog"
           app_catalog: "control-plane-catalog"
           app_catalog_test: "control-plane-test-catalog"
           chart: "goldilocks-app"
+          ct_config: ".circleci/ct-config.yml"
           # Trigger job on git tag.
           filters:
             tags:
