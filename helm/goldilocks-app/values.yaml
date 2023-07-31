@@ -2,6 +2,6 @@ image:
   # image.repository -- Repository for the goldilocks image
   repository: giantswarm/goldilocks
   # image.tag -- The goldilocks image tag to use
-  tag: v4.8.3
+  tag: v4.9.0
   # image.pullPolicy -- imagePullPolicy - Highly recommended to leave this as `Always`
   pullPolicy: Always
