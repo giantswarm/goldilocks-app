@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [6.3.0] - 2023-08-08
 
+### Changed
+
+- Moved to the chart upstream way of tracking changes
+
 ## [6.2.1] - 2023-04-20
 
 - Metadata: Use propert SVG icon, update description.
