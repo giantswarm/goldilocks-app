@@ -52,6 +52,9 @@
                         "enableArgoproj": {
                             "type": "boolean"
                         },
+                        "extraClusterRoleBindings": {
+                            "type": "array"
+                        },
                         "extraRules": {
                             "type": "array"
                         }
@@ -119,7 +122,7 @@
                             "type": "boolean"
                         },
                         "name": {
-                            "type": ["null", "string"]
+                            "type": "string"
                         }
                     }
                 },
@@ -138,7 +141,7 @@
                     "type": "object"
                 },
                 "basePath": {
-                    "type": ["null", "string"]
+                    "type": "string"
                 },
                 "deployment": {
                     "type": "object",
@@ -204,7 +207,7 @@
                             }
                         },
                         "ingressClassName": {
-                            "type": ["null", "string"]
+                            "type": "string"
                         },
                         "tls": {
                             "type": "array"
@@ -310,7 +313,7 @@
                             "type": "boolean"
                         },
                         "name": {
-                            "type": ["null", "string"]
+                            "type": "string"
                         }
                     }
                 },
@@ -329,9 +332,6 @@
             "type": "object",
             "properties": {
                 "pullPolicy": {
-                    "type": "string"
-                },
-                "registry": {
                     "type": "string"
                 },
                 "repository": {

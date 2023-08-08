@@ -1,13 +1,16 @@
 apiVersion: v2
-appVersion: "v4.4.0"
-version: "[[ .Version ]]"
+appVersion: "v4.9.0"
+annotations:
+  application.giantswarm.io/team: turtles
+  ui.giantswarm.io/logo: https://raw.githubusercontent.com/FairwindsOps/charts/master/stable/goldilocks/icon.png
+version: "7.0.2"
 description: |
-  Fairwinds Goldilocks is a tool to automatically adjust resource requests and limits.
-name: goldilocks-app
-home: https://github.com/giantswarm/goldilocks-app
-icon: https://s.giantswarm.io/app-icons/goldilocks/1/icon_light.svg
+  A Helm chart for running Fairwinds Goldilocks. See https://github.com/FairwindsOps/goldilocks
+name: goldilocks
+icon: https://raw.githubusercontent.com/FairwindsOps/charts/master/stable/goldilocks/icon.png
 maintainers:
-  - name: sudermanjr
+  - name: giantswarm/team-turtles
+    email: team-turtles@giantswarm.io
 sources:
   - https://github.com/FairwindsOps/goldilocks
 keywords:
@@ -15,11 +18,6 @@ keywords:
   - resources
   - kubernetes
 dependencies:
-- name: vertical-pod-autoscaler-app
-  version: 2.5.0
-  repository: https://giantswarm.github.io/default-catalog
-  condition: vpa.enabled
-- name: metrics-server-app
-  version: 1.8.0
-  repository: https://giantswarm.github.io/default-catalog
-  condition: metrics-server.enabled
+  - name: goldilocks
+    version: 7.0.2
+    repository: https://charts.fairwinds.com/stable
