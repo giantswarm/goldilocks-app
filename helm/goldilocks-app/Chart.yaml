@@ -2,12 +2,12 @@ apiVersion: v2
 appVersion: "v4.9.0"
 annotations:
   application.giantswarm.io/team: turtles
-  ui.giantswarm.io/logo: https://raw.githubusercontent.com/FairwindsOps/charts/master/stable/goldilocks/icon.png
-version: "6.3.0"
+  ui.giantswarm.io/logo: https://s.giantswarm.io/app-icons/goldilocks/1/icon_light.svg
+version: "6.3.1"
 description: |
   A Helm chart for running Fairwinds Goldilocks. See https://github.com/FairwindsOps/goldilocks
 name: goldilocks
-icon: https://raw.githubusercontent.com/FairwindsOps/charts/master/stable/goldilocks/icon.png
+icon: https://s.giantswarm.io/app-icons/goldilocks/1/icon_light.svg
 maintainers:
   - name: giantswarm/team-turtles
     email: team-turtles@giantswarm.io
