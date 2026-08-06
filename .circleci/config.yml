@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  architect: giantswarm/architect@4.35.5
+  architect: giantswarm/architect@9.6.0
 
 workflows:
   build:
@@ -12,7 +12,8 @@ workflows:
           app_catalog: "giantswarm-catalog"
           app_catalog_test: "giantswarm-test-catalog"
           chart: "goldilocks-app"
-          ct_config: ".circleci/ct-config.yml"
+          # appVersion tracks upstream goldilocks, not the chart version, so don't stamp it.
+          override_app_version: false
           # Trigger job on git tag.
           filters:
             tags:
@@ -25,7 +26,8 @@ workflows:
           app_catalog: "control-plane-catalog"
           app_catalog_test: "control-plane-test-catalog"
           chart: "goldilocks-app"
-          ct_config: ".circleci/ct-config.yml"
+          # appVersion tracks upstream goldilocks, not the chart version, so don't stamp it.
+          override_app_version: false
           # Trigger job on git tag.
           filters:
             tags:

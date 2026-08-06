@@ -19,3 +19,9 @@ checks:
   - "no-node-affinity"
   - "access-to-secrets"
   - "wildcard-in-rules"
+  # Both of the following only ever fire on the vendored upstream subchart
+  # (charts/goldilocks-*.tgz), whose manifests we don't author and can't fix here.
+  # `sorted-keys` is purely stylistic; `restart-policy` is a false positive on
+  # Deployments, which default to `Always`.
+  - "sorted-keys"
+  - "restart-policy"
