@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [6.3.1] - 2026-08-05
 
+### Changed
+
+- Update chart to use Giant Swarm hosted SVG icon, remove logo annotation
+
 ## [6.3.0] - 2023-08-08
 
 ### Changed
