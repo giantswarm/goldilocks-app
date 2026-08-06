@@ -12,7 +12,6 @@ workflows:
           app_catalog: "giantswarm-catalog"
           app_catalog_test: "giantswarm-test-catalog"
           chart: "goldilocks-app"
-          ct_config: ".circleci/ct-config.yml"
           # Trigger job on git tag.
           filters:
             tags:
@@ -25,7 +24,6 @@ workflows:
           app_catalog: "control-plane-catalog"
           app_catalog_test: "control-plane-test-catalog"
           chart: "goldilocks-app"
-          ct_config: ".circleci/ct-config.yml"
           # Trigger job on git tag.
           filters:
             tags:
