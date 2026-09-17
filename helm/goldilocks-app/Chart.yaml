@@ -18,5 +18,5 @@ keywords:
   - kubernetes
 dependencies:
   - name: goldilocks
-    version: 7.0.2
+    version: 7.3.1
     repository: https://charts.fairwinds.com/stable
