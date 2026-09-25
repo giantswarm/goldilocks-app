@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "v4.9.0"
 annotations:
   application.giantswarm.io/team: turtles
-version: "6.3.0"
+version: "6.3.1"
 description: |
   A Helm chart for running Fairwinds Goldilocks. See https://github.com/FairwindsOps/goldilocks
 name: goldilocks
